@@ -24,7 +24,7 @@ const AddTodo = () => {
     }
 
     return (
-        <div>
+        <div className='input'>
             <input type='text' value={newTextTodo} onChange={(e) => setNewTextTodo(e.target.value)}/>
             <button onClick={add}>Add</button>
         </div>

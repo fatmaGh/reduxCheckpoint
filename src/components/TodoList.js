@@ -2,14 +2,20 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import TodoCard from './TodoCard'
 
-const TodoList = () => {
+const TodoList = ({done, unDone}) => {
 
     const todoList = useSelector ((state) => state.todoList)
     
     return (
-        <div>
+        <div className='Todo__container'>
             {
-                todoList.map(todo => <TodoCard todo={todo} />)
+                done === unDone ?
+                todoList.map((todo) => (<TodoCard todo={todo} key={todo.id} />)) 
+                : done ?
+                todoList.filter((todo) => (todo.isDone === true))
+                .map((todo)=>(<TodoCard todo={todo} key={todo.id} />)) 
+                : todoList.filter((todo) => (todo.isDone === false))
+                .map((todo)=>(<TodoCard todo={todo} key={todo.id}/>))     
             }
         </div>
     )

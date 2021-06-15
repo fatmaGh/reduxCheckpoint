@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Modal from 'react-modal';
 import { useDispatch } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { editTodo } from '../JS/actions/actions';
 
 const customStyles = {
@@ -44,7 +45,9 @@ const EditTodo = ({todo: {text, id, isDone}}) => {
 
     return (
         <div>
-        <button onClick={openModal}>Edit</button>
+        {/* <button onClick={openModal}>Edit</button> */}
+        <div className='icon'><FontAwesomeIcon icon='edit' onClick={openModal}/></div>
+
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

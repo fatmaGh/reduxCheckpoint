@@ -8,7 +8,7 @@ const initialState = {
         {
             text: 'My First Todo',
             id: 0,
-            isDone: true
+            isDone: false
         },
         {
             text: 'My Second Todo',
